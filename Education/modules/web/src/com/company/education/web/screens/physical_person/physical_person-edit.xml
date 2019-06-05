@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.education.web.screens.physical_person">
+    <data>
+        <instance id="physical_personDc"
+                  class="com.company.education.entity.Physical_person"
+                  view="_local">
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="physical_personDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+                <textField id="last_nameField" property="last_name"/>
+                <textField id="middle_nameField" property="middle_name"/>
+                <textField id="personal_accountField" property="personal_account"/>
+                <textField id="ageField" property="age"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
