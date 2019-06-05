@@ -16,8 +16,20 @@
         <form id="form" dataContainer="legal_personDc">
             <column width="250px">
                 <textField id="name_of_companyField" property="name_of_company"/>
-                <textField id="innField" property="inn"/>
-                <textField id="personal_accountField" property="personal_account"/>
+                <textField id="innField" property="inn" maxLength="12">
+                    <validator>
+                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
+                        pattern="\d{12}"
+                        message="ИНН может содержать только цыфры."
+                    </validator>
+                </textField>
+                <textField id="personal_accountField" property="personal_account" maxLength="10">
+                    <validator>
+                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
+                        pattern="\d{10}"
+                        message="Лицевой счет может содержать только цыфры."
+                    </validator>
+                </textField>>
                 <pickerField id="bankField" property="bank">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>

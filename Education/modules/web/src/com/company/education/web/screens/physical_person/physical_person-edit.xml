@@ -18,7 +18,13 @@
                 <textField id="nameField" property="name"/>
                 <textField id="last_nameField" property="last_name"/>
                 <textField id="middle_nameField" property="middle_name"/>
-                <textField id="personal_accountField" property="personal_account"/>
+                <textField id="personal_accountField" property="personal_account" maxLength="10">
+                    <validator>
+                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
+                        pattern="\d{12}"
+                        message="ИНН может содержать только цыфры."
+                    </validator>
+                </textField>
                 <textField id="ageField" property="age"/>
             </column>
         </form>
