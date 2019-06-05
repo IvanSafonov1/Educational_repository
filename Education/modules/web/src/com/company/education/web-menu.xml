@@ -4,6 +4,7 @@
         <item screen="education_Legal_person.browse"/>
         <item screen="education_Customer.browse"/>
         <item screen="education_Contract.browse"/>
-        <item screen="education_Bank.edit"/>
+        <item screen="education_Bank.browse"/>
+        <item screen="education_Physical_person.browse"/>
     </menu>
 </menu-config>

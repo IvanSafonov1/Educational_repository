@@ -39,9 +39,12 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="contractsTable.create"/>
-                <button id="editBtn" action="contractsTable.edit"/>
-                <button id="removeBtn" action="contractsTable.remove"/>
+                <button id="createBtn" action="contractsTable.create"
+                        caption="&#1057;&#1086;&#1079;&#1076;&#1072;&#1090;&#1100;"/>
+                <button id="editBtn" action="contractsTable.edit"
+                        caption="&#1048;&#1079;&#1084;&#1077;&#1085;&#1080;&#1090;&#1100;"/>
+                <button id="removeBtn" action="contractsTable.remove"
+                        caption="&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
