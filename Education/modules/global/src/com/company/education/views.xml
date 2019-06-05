@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="education_Legal_person" name="legal_person-view" extends="_local">
+        <property name="bank" view="_minimal"/>
+    </view>
+    <view entity="education_Bank" name="bank-view" extends="_local"/>
+    <view entity="education_Physical_person" name="physical_person-view" extends="_local"/>
+    <view entity="education_Customer" name="customer-view" extends="_local"/>
+    <view entity="education_Contract" name="contract-view_edit">
+        <property name="customer" view="_minimal"/>
+        <property name="description"/>
+        <property name="conclusion_date"/>
+        <property name="performance_date"/>
+    </view>
+    <view entity="education_Contract" name="contract-view">
+        <property name="customer" view="_minimal"/>
+        <property name="conclusion_date"/>
+        <property name="performance_date"/>
+    </view>
+</views>

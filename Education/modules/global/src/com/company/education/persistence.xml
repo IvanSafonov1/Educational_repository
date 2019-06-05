@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="Education" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.education.entity.Bank</class>
+        <class>com.company.education.entity.Physical_person</class>
+        <class>com.company.education.entity.Legal_person</class>
+        <class>com.company.education.entity.Customer</class>
+        <class>com.company.education.entity.Contract</class>
+    </persistence-unit>
+</persistence>
