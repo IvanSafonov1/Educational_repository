@@ -21,8 +21,9 @@ public class Contract extends StandardEntity {
     @JoinColumn(name = "CUSTOMER_ID")
     protected Customer customer;
 
-    @Column(name = "DESCRIPTION", nullable = false, unique = false, length = 10)
-    protected String descriptionString;
+    @Lob
+    @Column(name = "DESCRIPTION")
+    protected String description;
 
     @Temporal(TemporalType.DATE)
     @NotNull
@@ -32,6 +33,14 @@ public class Contract extends StandardEntity {
     @Temporal(TemporalType.DATE)
     @Column(name = "PERFORMANCE_DATE")
     protected Date performance_date;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Date getPerformance_date() {
         return performance_date;
