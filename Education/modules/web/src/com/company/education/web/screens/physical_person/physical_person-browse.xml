@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="physical_personsTable"
+        messagesPack="com.company.education.web.screens.physical_person">
+    <data readOnly="true">
+        <collection id="physical_personsDc"
+                    class="com.company.education.entity.Physical_person"
+                    view="physical_person-view">
+            <loader id="physical_personsDl">
+                <query>
+                    <![CDATA[select e from education_Physical_person e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="physical_personsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="physical_personsTable"
+                dataLoader="physical_personsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="physical_personsTable"
+                    width="100%"
+                    dataContainer="physical_personsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="last_name"/>
+                <column id="middle_name"/>
+                <column id="personal_account"/>
+                <column id="age"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="physical_personsTable.create"/>
+                <button id="editBtn" action="physical_personsTable.edit"/>
+                <button id="removeBtn" action="physical_personsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
