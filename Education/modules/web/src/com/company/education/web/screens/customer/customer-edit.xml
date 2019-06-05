@@ -15,7 +15,13 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="customerDc">
             <column width="250px">
-                <textField id="personal_accountField" property="personal_account"/>
+                <textField id="personal_accountField" property="personal_account" maxLength="10">
+                    <validator>
+                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
+                        pattern="\d{10}"
+                        message="Лицевой счет может содержать только цыфры."
+                    </validator>
+                </textField>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
