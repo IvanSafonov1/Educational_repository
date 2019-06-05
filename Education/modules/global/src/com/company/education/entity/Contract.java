@@ -1,10 +1,11 @@
 package com.company.education.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "EDUCATION_CONTRACT")
@@ -13,9 +14,10 @@ public class Contract extends StandardEntity {
     private static final long serialVersionUID = 7753655191035057149L;
 
     @NotNull
-    @Column(name = "NUMBER_", nullable = false, unique = true, precision = 19, scale = 0)
-    protected BigDecimal number;
+    @Column(name = "NUMBER_", nullable = false, unique = true)
+    protected Long number;
 
+    @OnDeleteInverse(DeletePolicy.DENY)
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "CUSTOMER_ID")
@@ -28,11 +30,19 @@ public class Contract extends StandardEntity {
     @Temporal(TemporalType.DATE)
     @NotNull
     @Column(name = "CONCLUSION_DATE", nullable = false)
-    protected Date conclusion_date;
+    protected Date conclusionDate;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "PERFORMANCE_DATE")
-    protected Date performance_date;
+    protected Date performanceDate;
+
+    public void setNumber(Long number) {
+        this.number = number;
+    }
+
+    public Long getNumber() {
+        return number;
+    }
 
     public String getDescription() {
         return description;
@@ -42,20 +52,20 @@ public class Contract extends StandardEntity {
         this.description = description;
     }
 
-    public Date getPerformance_date() {
-        return performance_date;
+    public Date getPerformanceDate() {
+        return performanceDate;
     }
 
-    public void setPerformance_date(Date performance_date) {
-        this.performance_date = performance_date;
+    public void setPerformanceDate(Date performanceDate) {
+        this.performanceDate = performanceDate;
     }
 
-    public Date getConclusion_date() {
-        return conclusion_date;
+    public Date getConclusionDate() {
+        return conclusionDate;
     }
 
-    public void setConclusion_date(Date conclusion_date) {
-        this.conclusion_date = conclusion_date;
+    public void setConclusionDate(Date conclusionDate) {
+        this.conclusionDate = conclusionDate;
     }
 
     public Customer getCustomer() {
@@ -66,11 +76,4 @@ public class Contract extends StandardEntity {
         this.customer = customer;
     }
 
-    public BigDecimal getNumber() {
-        return number;
-    }
-
-    public void setNumber(BigDecimal number) {
-        this.number = number;
-    }
 }

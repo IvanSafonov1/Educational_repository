@@ -3,8 +3,8 @@
     <persistence-unit name="Education" transaction-type="RESOURCE_LOCAL">
 
         <class>com.company.education.entity.Bank</class>
-        <class>com.company.education.entity.Physical_person</class>
-        <class>com.company.education.entity.Legal_person</class>
+        <class>com.company.education.entity.PhysicalPerson</class>
+        <class>com.company.education.entity.LegalPerson</class>
         <class>com.company.education.entity.Customer</class>
         <class>com.company.education.entity.Contract</class>
     </persistence-unit>

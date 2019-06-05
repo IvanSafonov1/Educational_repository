@@ -5,7 +5,7 @@
         messagesPack="com.company.education.web.screens.physical_person">
     <data>
         <instance id="physical_personDc"
-                  class="com.company.education.entity.Physical_person"
+                  class="com.company.education.entity.PhysicalPerson"
                   view="_local">
             <loader/>
         </instance>
@@ -18,12 +18,8 @@
                 <textField id="nameField" property="name"/>
                 <textField id="last_nameField" property="last_name"/>
                 <textField id="middle_nameField" property="middle_name"/>
-                <textField id="personal_accountField" property="personal_account" maxLength="10">
-                    <validator>
-                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
-                        pattern="\d{12}"
-                        message="ИНН может содержать только цыфры."
-                    </validator>
+                <textField id="personalAccountField" property="personal_account" maxLength="10">
+
                 </textField>
                 <textField id="ageField" property="age"/>
             </column>

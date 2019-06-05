@@ -5,11 +5,11 @@
         messagesPack="com.company.education.web.screens.legal_person">
     <data readOnly="true">
         <collection id="legal_personsDc"
-                    class="com.company.education.entity.Legal_person"
-                    view="legal_person-view">
+                    class="com.company.education.entity.LegalPerson"
+                    view="legalPerson-view">
             <loader id="legal_personsDl">
                 <query>
-                    <![CDATA[select e from education_Legal_person e]]>
+                    <![CDATA[select e from education_LegalPerson e]]>
                 </query>
             </loader>
         </collection>

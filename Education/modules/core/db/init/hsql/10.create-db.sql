@@ -28,7 +28,7 @@ create table EDUCATION_CONTRACT (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    NUMBER_ decimal(19) not null,
+    NUMBER_ bigint not null,
     CUSTOMER_ID varchar(36) not null,
     DESCRIPTION longvarchar,
     CONCLUSION_DATE date not null,

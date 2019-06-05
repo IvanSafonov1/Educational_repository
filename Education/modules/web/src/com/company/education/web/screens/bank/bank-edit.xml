@@ -16,7 +16,7 @@
         <form id="form" dataContainer="bankDc">
             <column width="250px">
                 <textField id="nameField" property="name"/>
-                <textField id="bikField" property="bik"/>
+                <textField id="bikField" property="bik" maxLength="9"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

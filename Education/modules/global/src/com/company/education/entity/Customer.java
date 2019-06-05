@@ -1,5 +1,6 @@
 package com.company.education.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|personal_account")
 @Table(name = "EDUCATION_CUSTOMER")
 @Entity(name = "education_Customer")
 public class Customer extends StandardEntity {

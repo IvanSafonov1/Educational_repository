@@ -22,8 +22,8 @@
                     </actions>
                 </pickerField>
                 <textArea id="descriptionField" property="description" rows="5"/>
-                <dateField id="conclusion_dateField" property="conclusion_date"/>
-                <dateField id="performance_dateField" property="performance_date"/>
+                <dateField id="conclusion_dateField" property="conclusionDate"/>
+                <dateField id="performance_dateField" property="performanceDate"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

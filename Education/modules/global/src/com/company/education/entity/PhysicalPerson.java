@@ -8,8 +8,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "EDUCATION_PHYSICAL_PERSON")
-@Entity(name = "education_Physical_person")
-public class Physical_person extends StandardEntity {
+@Entity(name = "education_PhysicalPerson")
+public class PhysicalPerson extends StandardEntity {
     private static final long serialVersionUID = -3127182255724693579L;
 
     @NotNull

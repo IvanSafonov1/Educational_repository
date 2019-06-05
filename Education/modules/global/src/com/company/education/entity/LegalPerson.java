@@ -1,13 +1,15 @@
 package com.company.education.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@NamePattern("%s|name_of_company")
 @Table(name = "EDUCATION_LEGAL_PERSON")
-@Entity(name = "education_Legal_person")
-public class Legal_person extends StandardEntity {
+@Entity(name = "education_LegalPerson")
+public class LegalPerson extends StandardEntity {
     private static final long serialVersionUID = -255844484957261276L;
 
     @NotNull

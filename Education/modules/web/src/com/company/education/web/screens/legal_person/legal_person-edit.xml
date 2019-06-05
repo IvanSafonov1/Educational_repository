@@ -5,8 +5,8 @@
         messagesPack="com.company.education.web.screens.legal_person">
     <data>
         <instance id="legal_personDc"
-                  class="com.company.education.entity.Legal_person"
-                  view="legal_person-view">
+                  class="com.company.education.entity.LegalPerson"
+                  view="legalPerson-view">
             <loader/>
         </instance>
     </data>
@@ -17,18 +17,10 @@
             <column width="250px">
                 <textField id="name_of_companyField" property="name_of_company"/>
                 <textField id="innField" property="inn" maxLength="12">
-                    <validator>
-                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
-                        pattern="\d{12}"
-                        message="ИНН может содержать только цыфры."
-                    </validator>
+
                 </textField>
                 <textField id="personal_accountField" property="personal_account" maxLength="10">
-                    <validator>
-                        class="com.haulmont.cuba.gui.components.validators.PatternValidator"
-                        pattern="\d{10}"
-                        message="Лицевой счет может содержать только цыфры."
-                    </validator>
+
                 </textField>>
                 <pickerField id="bankField" property="bank">
                     <actions>
