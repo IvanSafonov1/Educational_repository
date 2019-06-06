@@ -1,0 +1,3 @@
+alter table EDUCATION_LEGAL_PERSON alter column BANK_ID rename to BANK_ID__U63954 ^
+drop index IDX_EDUCATION_LEGAL_PERSON_ON_BANK ;
+alter table EDUCATION_LEGAL_PERSON drop constraint FK_EDUCATION_LEGAL_PERSON_ON_BANK ;

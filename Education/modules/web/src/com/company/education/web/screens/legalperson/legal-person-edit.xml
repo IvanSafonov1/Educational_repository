@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.education.web.screens.legalperson">
+    <data>
+        <instance id="legalPersonDc"
+                  class="com.company.education.entity.LegalPerson"
+                  view="legalPerson-view">
+            <loader/>
+            <collection id="bankDc" property="bank"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <tabSheet>
+            <tab id="tab_1" caption="&#1054;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1077;" margin="true,false,false,false" spacing="true">
+                <form id="form" dataContainer="legalPersonDc">
+                    <column width="250px">
+                        <textField id="name_of_companyField" property="name_of_company"/>
+                        <textField id="innField" property="inn"/>
+                        <textField id="personal_accountField" property="personal_account"/>
+                    </column>
+                </form>
+            </tab>
+            <tab id="tab" caption="&#1041;&#1072;&#1085;&#1082;&#1080;" margin="true,false,false,false" spacing="true"
+            >
+                <groupBox id="bankBox">
+                    <table id="bankTable" dataContainer="bankDc" width="100%" height="200px"
+                           caption="&#1041;&#1072;&#1085;&#1082;&#1080; &#1102;&#1088;&#1080;&#1076;&#1080;&#1095;&#1077;&#1089;&#1082;&#1086;&#1075;&#1086; &#1083;&#1080;&#1094;&#1072;">
+                        <actions>
+                            <action id="add" type="add"/>
+                            <action id="exclude" type="exclude"/>
+                        </actions>
+                        <columns>
+                            <column id="name"/>
+                        </columns>
+                        <buttonsPanel>
+                            <button action="bankTable.add" caption="&#1044;&#1086;&#1073;&#1072;&#1074;&#1080;&#1090;&#1100;"/>
+                            <button action="bankTable.exclude" caption="&#1059;&#1076;&#1072;&#1083;&#1080;&#1090;&#1100;"/>
+                        </buttonsPanel>
+                    </table>
+                </groupBox>
+            </tab>
+        </tabSheet>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"
+                    caption="&#1047;&#1072;&#1087;&#1080;&#1089;&#1072;&#1090;&#1100; &#1080; &#1079;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100;"/>
+            <button action="windowClose" caption="&#1047;&#1072;&#1082;&#1088;&#1099;&#1090;&#1100;"/>
+        </hbox>
+    </layout>
+</window>

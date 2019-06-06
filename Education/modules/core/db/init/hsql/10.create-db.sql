@@ -12,7 +12,6 @@ create table EDUCATION_LEGAL_PERSON (
     NAME_OF_COMPANY varchar(255) not null,
     INN varchar(12) not null,
     PERSONAL_ACCOUNT varchar(10) not null,
-    BANK_ID varchar(36),
     --
     primary key (ID)
 )^
@@ -90,3 +89,10 @@ create table EDUCATION_PHYSICAL_PERSON (
     primary key (ID)
 )^
 -- end EDUCATION_PHYSICAL_PERSON
+-- begin EDUCATION_LEGAL_PERSON_BANK_LINK
+create table EDUCATION_LEGAL_PERSON_BANK_LINK (
+    BANK_ID varchar(36) not null,
+    LEGAL_PERSON_ID varchar(36) not null,
+    primary key (BANK_ID, LEGAL_PERSON_ID)
+)^
+-- end EDUCATION_LEGAL_PERSON_BANK_LINK

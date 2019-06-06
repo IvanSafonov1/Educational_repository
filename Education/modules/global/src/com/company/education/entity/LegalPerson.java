@@ -2,9 +2,12 @@ package com.company.education.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @NamePattern("%s|name_of_company")
 @Table(name = "EDUCATION_LEGAL_PERSON")
@@ -24,16 +27,17 @@ public class LegalPerson extends StandardEntity {
     @Column(name = "PERSONAL_ACCOUNT", nullable = false, unique = true, length = 10)
     protected String personal_account;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "BANK_ID")
-    protected Bank bank;
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @JoinTable(name = "EDUCATION_LEGAL_PERSON_BANK_LINK", joinColumns = @JoinColumn(name = "LEGAL_PERSON_ID"), inverseJoinColumns = @JoinColumn(name = "BANK_ID"))
+    @ManyToMany
+    protected List<Bank> bank;
 
-    public Bank getBank() {
-        return bank;
+    public void setBank(List<Bank> bank) {
+        this.bank = bank;
     }
 
-    public void setBank(Bank bank) {
-        this.bank = bank;
+    public List<Bank> getBank() {
+        return bank;
     }
 
     public String getPersonal_account() {

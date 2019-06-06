@@ -1,4 +1,4 @@
-package com.company.education.web.screens.legal_person;
+package com.company.education.web.screens.legalperson;
 
 import com.haulmont.cuba.gui.components.TextField;
 import com.haulmont.cuba.gui.components.ValidationErrors;
@@ -8,11 +8,10 @@ import com.company.education.entity.LegalPerson;
 import javax.inject.Inject;
 
 @UiController("education_LegalPerson.edit")
-@UiDescriptor("legal_person-edit.xml")
-@EditedEntityContainer("legal_personDc")
+@UiDescriptor("legal-person-edit.xml")
+@EditedEntityContainer("legalPersonDc")
 @LoadDataBeforeShow
-public class legalPersonEdit extends StandardEditor<LegalPerson> {
-
+public class LegalPersonEdit extends StandardEditor<LegalPerson> {
     @Inject
     private TextField<String> innField;
     @Inject
