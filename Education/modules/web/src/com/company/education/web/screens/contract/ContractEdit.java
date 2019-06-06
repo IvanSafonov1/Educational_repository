@@ -44,10 +44,7 @@ public class ContractEdit extends StandardEditor<Contract> {
 
     @Subscribe
     private void onInitEntity(InitEntityEvent<Contract> event) {
-       // Contract item = contractDc.getItem();
-       // if (PersistenceHelper.isNew(item)) {
          event.getEntity().setConclusionDate(timeSource.currentTimestamp());
-       //}
     }
     @Override
     protected void validateAdditionalRules(ValidationErrors errors) {
@@ -56,13 +53,6 @@ public class ContractEdit extends StandardEditor<Contract> {
         if (conclusionDateField.getValue().after(performanceDateField.getValue())) {
             errors.add("Дата заключения не может быть меньше даты исполнения.");
         }
-    }
-
-    @Subscribe("conclusionDateField")
-    private void onConclusionDateFieldValueChange(HasValue.ValueChangeEvent<Date> event) {
-        //if(conclusionDateField.getValue().after(performanceDateField.getValue())) {
-
-        //}
     }
 
 }
