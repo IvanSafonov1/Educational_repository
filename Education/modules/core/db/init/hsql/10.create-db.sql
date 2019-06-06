@@ -29,7 +29,7 @@ create table EDUCATION_CONTRACT (
     --
     NUMBER_ bigint not null,
     CUSTOMER_ID varchar(36) not null,
-    DESCRIPTION longvarchar,
+    DESCRIPTION longvarchar not null,
     CONCLUSION_DATE date not null,
     PERFORMANCE_DATE date,
     --

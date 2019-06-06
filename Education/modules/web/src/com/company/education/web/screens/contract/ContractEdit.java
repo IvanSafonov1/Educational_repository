@@ -5,6 +5,8 @@ import com.haulmont.cuba.core.global.PersistenceHelper;
 import com.haulmont.cuba.core.global.TimeSource;
 import com.haulmont.cuba.gui.components.DateField;
 import com.haulmont.cuba.gui.components.HasValue;
+import com.haulmont.cuba.gui.components.TextArea;
+import com.haulmont.cuba.gui.components.ValidationErrors;
 import com.haulmont.cuba.gui.model.InstanceContainer;
 import com.haulmont.cuba.gui.screen.*;
 import com.company.education.entity.Contract;
@@ -27,6 +29,8 @@ public class ContractEdit extends StandardEditor<Contract> {
     private TimeSource timeSource;
     @Inject
     private DateField<Date> performanceDateField;
+    @Inject
+    private TextArea<String> descriptionField;
 
 
     @Subscribe
@@ -45,19 +49,20 @@ public class ContractEdit extends StandardEditor<Contract> {
          event.getEntity().setConclusionDate(timeSource.currentTimestamp());
        //}
     }
+    @Override
+    protected void validateAdditionalRules(ValidationErrors errors) {
+        super.validateAdditionalRules(errors);
 
-    @Subscribe("performanceDateField")
-    private void onPerformanceDateFieldValueChange(HasValue.ValueChangeEvent<Date> event) {
-        if(conclusionDateField.getValue().after(performanceDateField.getValue())) {
-
+        if (conclusionDateField.getValue().after(performanceDateField.getValue())) {
+            errors.add("Дата заключения не может быть меньше даты исполнения.");
         }
     }
 
     @Subscribe("conclusionDateField")
     private void onConclusionDateFieldValueChange(HasValue.ValueChangeEvent<Date> event) {
-        if(conclusionDateField.getValue().after(performanceDateField.getValue())) {
+        //if(conclusionDateField.getValue().after(performanceDateField.getValue())) {
 
-        }
+        //}
     }
 
 }

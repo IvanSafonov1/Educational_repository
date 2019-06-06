@@ -23,8 +23,9 @@ public class Contract extends StandardEntity {
     @JoinColumn(name = "CUSTOMER_ID")
     protected Customer customer;
 
+    @NotNull
     @Lob
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", nullable = false)
     protected String description;
 
     @Temporal(TemporalType.DATE)
