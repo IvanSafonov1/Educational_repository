@@ -19,9 +19,10 @@ public class BankEdit extends StandardEditor<Bank> {
     @Override
     protected void validateAdditionalRules(ValidationErrors errors) {
         super.validateAdditionalRules(errors);
-
-        if (!bikField.getValue().matches("[0-9]*")) {
-            errors.add("Поле БИК должно содержать только цифры");
+        if (!(bikField.getValue() == null)) {
+            if (!bikField.getValue().matches("[0-9]*")) {
+                errors.add("Поле БИК должно содержать только цифры");
+            }
         }
     }
 }

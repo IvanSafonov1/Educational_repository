@@ -19,9 +19,10 @@ public class CustomerEdit extends StandardEditor<Customer> {
     @Override
     protected void validateAdditionalRules(ValidationErrors errors) {
         super.validateAdditionalRules(errors);
-
-        if (!personal_accountField.getValue().matches("[0-9]*")) {
-            errors.add("Поле лицевой счет должно содержать только цифры");
+        if (!(personal_accountField.getValue() == null)) {
+            if (!personal_accountField.getValue().matches("[0-9]*")) {
+                errors.add("Поле лицевой счет должно содержать только цифры");
+            }
         }
     }
 }

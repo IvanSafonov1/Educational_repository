@@ -20,10 +20,11 @@ public class physicalPersonEdit extends StandardEditor<PhysicalPerson> {
     @Override
     protected void validateAdditionalRules(ValidationErrors errors) {
         super.validateAdditionalRules(errors);
-
-        if (!personalAccountField.getValue().matches("[0-9]*")){
-            errors.add("Поле лицевой счет должно содержать только цифры");
+        if (!(personalAccountField.getValue() == null)) {
+            if (!personalAccountField.getValue().matches("[0-9]*")) {
+                errors.add("Поле лицевой счет должно содержать только цифры");
+            }
         }
-    }
 
+    }
 }

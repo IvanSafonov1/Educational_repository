@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-education" insertBefore="administration">
-        <item screen="education_Legal_person.browse"/>
+        <item screen="education_Legalperson.browse"/>
         <item screen="education_Customer.browse"/>
         <item screen="education_Contract.browse"/>
         <item screen="education_Bank.browse"/>
